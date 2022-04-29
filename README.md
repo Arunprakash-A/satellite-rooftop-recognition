@@ -35,10 +35,10 @@ says whether that particular coordinate is on the rooftop or not. (Well, think a
 ### Sample Images
 
 Each image is of 1 arcsec resolution. <br>
-![Positive samples](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/sample_train.PNG?raw=True)
-<p align="center" >Fig.1 A few Positive Samples </p> <br>
-![Nagative samples](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/sample_neg.PNG?raw=True)
-<p align="center" >Fig.2 A few Negative Samples </p>
+<p align="center" > <img src="https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/sample_train.PNG?raw=True"> </p>
+<p align="center" > Fig.1 A few Positive Samples </p> 
+<p align="center" > <img src='https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/sample_neg.PNG?raw=True'> </p>
+<p align="center" > Fig.2 A few Negative Samples </p>
 
 ### CNN Model
 
@@ -52,12 +52,12 @@ Each image is of 1 arcsec resolution. <br>
 5. **Number of learnable parameters**: 89957
 
 ### Performance
- ![Metrics](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/metrics.png?raw=True)
+ <p align="center" > <img src="https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/metrics.png?raw=True"> </p>
    <p align="center" >Fig.4 Top row: Loss, Bottom Row: Accuracy</p>
 ### Sample Output Predictions
-![predictions](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/pred_2_rt.png?raw=True)
+<p align="center" > <img src="https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/pred_2_rt.png?raw=True"> </p>
    <p align="center" >Fig.5 True Positive - Predicted Positive</p>
-![predictions](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/pred_1.png?raw=True)
+<p align="center" > <img src="https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/pred_1.png?raw=True"> </p>
    <p align="center" >Fig.5 True negative - Predicted negative</p>
 ### Running the Code
 
