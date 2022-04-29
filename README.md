@@ -7,25 +7,25 @@ says whether that particular coordinate is on the rooftop or not. (Well, think a
 
 ### Approach
 
-1. *Learning paradigm:* Supervised Learning as we can collect and label images from, say, Google's earth engine.
-2. *Model:* Convolutional Neural Network (CNN) for binary classification.
-3. *Rationale:* CNN's are capable of extracting complex features from
+1. **Learning paradigm:** Supervised Learning as we can collect and label images from, say, Google's earth engine.
+2. **Model:** Convolutional Neural Network (CNN) for binary classification.
+3. **Rationale:** CNN's are capable of extracting complex features from
    images and, subsequently, they could be used to make a decision.
 
 ### Data Collection
 
 #### Basic Details and challenges
 
-1. *Source of Data:* Google Earth
-2. *Input Format:* (Degree - arcmin - arcsecond), where 1o =108 Km,
+1. **Source of Data:** Google Earth
+2. **Input Format:** (Degree - arcmin - arcsecond), where 1o =108 Km,
    10 = 1.8 Km and 1" = 30 m.
 3. However, the maximum Resolution provided by Google Earth is limited
    to 30 m (i.e, 1 arc second) along both latitude and the longitude. Therefore,
-   the maximum resolution of a cell is 900 m^2   and the coordinate of the
+   the maximum resolution of a cell is $900 m^2$   and the coordinate of the
    cell is considered for the labelling process.
-4. *Challenge*: As a consequence, a single 900 m2 cell may contain more
+4. **Challenge**: As a consequence, a single 900 $m^2$ cell may contain more
    than one rooftop and/or a non-rooftop region.
-5. *Labelling:* A cell is labelled as 1 (positive sample) if more than half
+5. **Labelling:** A cell is labelled as 1 (positive sample) if more than half
    of the region of a cell contains a rooftop. It is labelled as 0 (negative
    sample) otherwise.
 6. Total number of samples: 201
@@ -34,37 +34,46 @@ says whether that particular coordinate is on the rooftop or not. (Well, think a
 
 ### Sample Images
 
-Each image is of 1 arcsec resolution.
+Each image is of 1 arcsec resolution. <br>
+![Positive samples](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/sample_train.PNG?raw=True)
+<p align="center" >Fig.1 A few Positive Samples </p> <br>
+![Nagative samples](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/sample_neg.PNG?raw=True)
+<p align="center" >Fig.2 A few Negative Samples </p>
 
 ### CNN Model
 
 1. The ConvNet Architecture used in the project is shown in Fig.3
 2. Activation: All neurons use Relu activation except the neuron in the
    output layer. Output neuron uses sigmoid activation function.
-3. *Loss function:* Binary Cross Entropy.
-4. *Optimization:*  Gradient Descent with momentum
-5. *Number of learnable parameters*: 89957
+   ![Architecture](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/Block_diagram.PNG?raw=True)
+   <p align="center" >Fig.3 Architecture used </p>
+3. **Loss function:* Binary Cross Entropy.
+4. **Optimization:**  Gradient Descent with momentum
+5. **Number of learnable parameters**: 89957
 
 ### Performance
-
-### Output Predictions
-
+ ![Metrics](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/metrics.png?raw=True)
+   <p align="center" >Fig.4 Top row: Loss, Bottom Row: Accuracy</p>
+### Sample Output Predictions
+![predictions](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/pred_2_rt.png?raw=True)
+   <p align="center" >Fig.5 True Positive - Predicted Positive</p>
+![predictions](https://github.com/Arunprakash-A/satellite-rooftop-recognition/blob/main/images/pred_1.png?raw=True)
+   <p align="center" >Fig.5 True negative - Predicted negative</p>
 ### Running the Code
 
 **Required libraries** to execute the code: `Pytorch, sklearn, numpy, matplotlib`
 
-1. Unzip the zipped folder named code and keep it in the current working
+1. Unzip the zipped **data** folder and keep it in the current working
    directory.
-2. All the training and testing images are stored in a directory named
+2. All the training and testing images are stored in the directory named
    "data".
 3. The trained weights and metrics are stored in a directory named "chk-
    points".
-4. To test the model with pre-trained weights, enter `"python test.py"` in
-   CLI.
+4. To test the model with pre-trained weights, enter `"python test.py"` from a Command Line Interface.
 5. To evaluate the model, type " python evaluation.py 10". The argument
    10 denotes the number of images to test randomly from the test dataset.
 6. To plot the training metrics such as Loss and Accuracy, type `"python`
    `plot metrics.py"`
 
-### # Happy Learning
+### Happy Learning
 
